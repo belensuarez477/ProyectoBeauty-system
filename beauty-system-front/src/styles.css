@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --green-main: #377741;
+  --green-soft: #b0f2c2;
+  --bg-soft: #f4f6f5;
+  --bg-gradient: linear-gradient(135deg, #faebd7, #b0f2c2);
+  --bg-card: #ffffff;
+
+  --text-main: #0c0c0c;
+  --text-muted: #555;
+
+  --accent: #d69d22;
+
+  --fs-h1: clamp(2.2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.8rem, 3vw, 2.2rem);
+  --fs-h3: 1.25rem;
+  --fs-text: 1rem;
+
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+}
+
+.section {
+  padding: var(--space-xl) 1.5rem;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: var(--fs-h2);
+  color: var(--green-main);
+  margin-bottom: var(--space-sm);
+}
+
+.section > p {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto var(--space-lg);
+  font-size: var(--fs-text);
+}

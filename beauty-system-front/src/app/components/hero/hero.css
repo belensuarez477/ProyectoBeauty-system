@@ -1,0 +1,118 @@
+/* ================== HERO ESTILO BENEFITS ================== */
+.hero {
+  position: relative;
+  margin-top: 5rem; /* espacio para navbar */
+  background: #f8f9f8; /* unificado con beneficios */
+  padding-top: 85px;
+  padding-bottom: 75px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 350px;
+  padding-bottom: 350px;
+  padding-right: 1500px;
+  padding-left: 1570px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* texto a la izquierda, espacio de imagen a la derecha */
+  align-items: center;
+  gap: var(--space-lg);
+
+  /* estilo tipo card */
+  background-color: var(--bg-card); 
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden; /* evita que la imagen se salga del contenedor */
+}
+
+/* Imagen integrada al hero */
+.hero-container::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: auto;
+  width: 50%; /* ocupa la mitad derecha del hero */
+  height: 100%;
+  background: url("/img/imagen_generada.png") no-repeat right center;
+  background-size:contain; /* cubre el área manteniendo proporción */
+  pointer-events:painted; /* no interfiere con clicks */
+  z-index: 0;
+}
+
+.hero-text {
+  text-align: left;
+  position: relative; /* para que quede encima de la imagen */
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: var(--fs-h1) ;
+  color: var(--green-main); /* armoniza con benefits */
+  margin-bottom: var(--space-md);
+  font-size:inherit;
+justify-content:initial;
+  display: inline-block;
+  font-size: 4.5rem;
+}
+
+.hero-text p {
+  font-size: var(--fs-text);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: var(--space-md);
+  font-size: 1.8rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--green-main);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.cta-btn:hover {
+  background-color: #2d5f35;
+  transform: translateY(-2px);
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-container::after {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background-position: center center;
+    margin-top: 30px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: var(--fs-h2);
+  }
+
+  .hero-container::after {
+    height: 200px;
+    background-size: cover;
+  }
+}
