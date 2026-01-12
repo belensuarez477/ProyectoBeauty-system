@@ -3,15 +3,9 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-public',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './navbar-public.html',
   styleUrl: './navbar-public.css',
 })
-export class NavbarPublic {
-sMenuOpen = false;
-  isMenuOpen: any;
-
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-}
+export class NavbarPublic {}

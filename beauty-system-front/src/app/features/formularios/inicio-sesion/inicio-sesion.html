@@ -1,0 +1,35 @@
+<form
+  #loginForm="ngForm"
+  (ngSubmit)="iniciarSesion(loginForm)"
+  autocomplete="off"
+>
+  <fieldset>
+    <h2>Inicio de Sesión</h2>
+
+    <label for="login-user">Usuario</label>
+    <input
+      type="text"
+      id="login-user"
+      name="usuario"
+      [(ngModel)]="usuario"
+      autocomplete="username"
+      placeholder="Ingresa tu usuario"
+    />
+
+    <label for="login-password">Contraseña</label>
+    <input
+      type="password"
+      id="login-password"
+      name="password"
+      [(ngModel)]="password"
+      autocomplete="current-password"
+      placeholder="Ingresa tu contraseña"
+    />
+
+    <button type="submit">Entrar</button>
+  </fieldset>
+</form>
+
+<div class="toast" [ngClass]="{'toast-exito': toastTipo === 'exito', 'toast-error': toastTipo === 'error'}" *ngIf="toastVisible">
+  {{ toastMessage }}
+</div>

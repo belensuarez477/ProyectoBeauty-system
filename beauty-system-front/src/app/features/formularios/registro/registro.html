@@ -1,0 +1,54 @@
+<form (ngSubmit)="registrar()" autocomplete="off">
+  <fieldset>
+    <h2>Registro de usuario</h2>
+
+    <label>Nombre completo</label>
+    <input
+      type="text"
+      [(ngModel)]="nombre"
+      name="nombre-completo"
+      autocomplete="off"
+      placeholder="ejemplo: perez juan"
+    />
+
+    <label>Email</label>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email-registro"
+      autocomplete="off"
+      placeholder="ejemplo: adminhola@gmail.com"
+    />
+
+    <label>Usuario</label>
+    <input
+      type="text"
+      [(ngModel)]="usuario"
+      name="nuevo-usuario"
+      autocomplete="off"
+    />
+
+    <label>Contraseña (máx 12 caracteres)</label>
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="nueva-password"
+      autocomplete="new-password"
+      placeholder="Mezcla letras, números y caracteres especiales"
+    />
+
+    <label>Confirmar contraseña</label>
+    <input
+      type="password"
+      [(ngModel)]="confirmar"
+      name="confirmar-password"
+      autocomplete="new-password"
+    />
+
+    <button type="submit">Registrarse</button>
+  </fieldset>
+</form>
+
+<div class="toast" [ngClass]="{'toast-exito': toastTipo === 'exito', 'toast-error': toastTipo === 'error'}" *ngIf="toastVisible">
+  {{ toastMessage }}
+</div>

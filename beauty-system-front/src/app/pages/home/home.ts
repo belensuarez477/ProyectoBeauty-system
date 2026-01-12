@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { Hero } from "../../components/hero/hero";
-import { Beneficios } from "../../feauters/beneficios/beneficios";
-import { ComoFunciona } from "../../feauters/como-funciona/como-funciona";
-import { InicioSesion } from '../../feauters/formularios/inicio-sesion/inicio-sesion';
-import { Registro } from '../../feauters/formularios/registro/registro';
-import { Contactos } from '../../feauters/formularios/contactos/contactos';
+
+import { Hero } from '../../components/hero/hero';
 import { NavbarPublic } from '../../components/navbar-public/navbar-public';
+import { Beneficios } from '../../features/beneficios/beneficios';
+import { ComoFunciona } from '../../features/como-funciona/como-funciona';
+
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, Beneficios, ComoFunciona, InicioSesion, Registro, Contactos, NavbarPublic],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+  standalone: true,
+  imports: [
+    Hero,
+    NavbarPublic,
+    Beneficios,
+    ComoFunciona,
+  ],
+  templateUrl: './home.html'
 })
-export class Home {
-
-}
+export class Home {}

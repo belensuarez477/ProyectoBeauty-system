@@ -1,0 +1,23 @@
+<form (ngSubmit)="enviarContacto()">
+  <fieldset>
+    <h2>Formulario de contacto</h2>
+
+    <label>Nombre</label>
+    <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="juan perez" />
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" placeholder="adminhola@gmail.com" />
+
+    <label>Teléfono</label>
+    <input type="text" [(ngModel)]="telefono" name="telefono" placeholder="1234567890" />
+
+    <label>Mensaje</label>
+    <textarea [(ngModel)]="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+    <button type="submit">Enviar</button>
+  </fieldset>
+</form>
+
+<div class="toast" [ngClass]="{'toast-exito': toastTipo === 'exito', 'toast-error': toastTipo === 'error'}" *ngIf="toastVisible">
+  {{ toastMessage }}
+</div>
