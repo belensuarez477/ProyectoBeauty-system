@@ -1,0 +1,117 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4; 
+  margin: 0;
+}
+
+
+
+h2 {
+  text-align: center;
+  font-size: 3rem;       /* ✔ grande estilo PC */
+  color: rgba(255, 253, 249, 0.984);
+  margin-bottom: 2rem;
+}
+
+
+
+form {
+  background-color: #000000;
+  padding: 3rem;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 1250px;     /* ✔ tamaño ideal para PC */
+  margin: 3rem auto 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #fff9f9;
+  font-size: 3rem; 
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form input[type="telefono"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #1a1818;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 2rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+
+
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 2rem;
+  background-color: #377741; 
+  color: antiquewhite;
+  border: none;
+  border-radius: 6px;
+  font-size: 2.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+form button:hover {
+  background-color:#377741; 
+}
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 20px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  animation: fadeInOut 4s forwards;
+  z-index: 9999;
+}
+
+.toast-exito {
+  background-color: #4CAF50;
+  color: #fff;
+  border-left: 4px solid #45a049;
+}
+
+.toast-error {
+  background-color: #f44336;
+  color: #fff;
+  border-left: 4px solid #da190b;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateY(20px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}

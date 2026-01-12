@@ -1,0 +1,122 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  min-height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: rgba(255, 253, 249, 0.984);
+  margin-bottom: 1rem;
+}
+
+form {
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  height: 700px;
+  margin: 8rem auto 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+form input[type="text"],
+form input[type="password"] {
+   width: 100%;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #1a1818;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 2rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+form button {
+  width: 100%;
+  padding: 1.8rem;
+  margin-top: 2rem;
+  background-color: #377741;
+  color: antiquewhite;
+  border: none;
+  border-radius: 6px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #44804d;
+}
+
+form a {
+  display: block;
+  margin-top: 3rem;
+  text-align: center;
+  color: #377741;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 30px 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  animation: fadeInOut 4s forwards;
+  z-index: 9999;
+  max-width: 500px;
+  text-align: center;
+}
+
+.toast-exito {
+  background-color: #4CAF50;
+  color: #fff;
+  border-left: 4px solid #45a049;
+}
+
+.toast-error {
+  background-color: #f44336;
+  color: #fff;
+  border-left: 4px solid #da190b;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateY(20px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
