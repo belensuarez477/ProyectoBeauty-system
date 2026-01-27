@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-como-funciona',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './como-funciona.html',
   styleUrl: './como-funciona.css',
 })

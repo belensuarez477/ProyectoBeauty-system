@@ -4,8 +4,7 @@ import { Home } from './app/pages/home/home';
 import { InicioSesion } from './app/features/formularios/inicio-sesion/inicio-sesion';
 import { Registro } from './app/features/formularios/registro/registro';
 import { Contactos } from './app/features/formularios/contactos/contactos';
-
-
+import { Dashboard } from './app/pages/dashboard/dashboard';
 
 export const routes: Routes = [
   {
@@ -19,4 +18,15 @@ export const routes: Routes = [
     ]
   },
 
+  // 🔥 DASHBOARD FUERA DEL LAYOUT PÚBLICO
+  {
+    path: 'dashboard',
+    component: Dashboard
+  },
+
+  // fallback
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];

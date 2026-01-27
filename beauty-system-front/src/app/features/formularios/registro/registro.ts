@@ -7,7 +7,7 @@ import { AuthService } from '../../../core/services/auth.service';
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [ CommonModule, FormsModule ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './registro.html',
   styleUrl: './registro.css',
 })
@@ -28,19 +28,16 @@ export class Registro {
   ) {}
 
   registrar() {
-    // Validar que todos los campos estén completos
     if (!this.nombre || !this.email || !this.usuario || !this.password || !this.confirmar) {
       this.mostrarToast('Complete los datos faltantes', 'error');
       return;
     }
 
-    // Validar que las contraseñas coincidan
     if (this.password !== this.confirmar) {
       this.mostrarToast('Las contraseñas no coinciden', 'error');
       return;
     }
 
-    // Intentar registrar el usuario
     const resultado = this.authService.registrarUsuario({
       nombre: this.nombre,
       email: this.email,
@@ -49,11 +46,15 @@ export class Registro {
     });
 
     if (resultado.success) {
+      // 👉 LOGIN AUTOMÁTICO
+      this.authService.guardarSesionActual(this.usuario);
+
       this.mostrarToast('Registro exitoso', 'exito');
-      // Redirigir después de 2 segundos
+
       setTimeout(() => {
-        this.router.navigate(['/inicio-sesion']);
-      }, 2000);
+        this.router.navigate(['/dashboard'], { replaceUrl: true });
+      }, 1500);
+
     } else {
       this.mostrarToast(resultado.mensaje, 'error');
     }
@@ -64,7 +65,6 @@ export class Registro {
     this.toastTipo = tipo;
     this.toastVisible = true;
 
-    // Ocultar el toast después de 4 segundos
     setTimeout(() => {
       this.toastVisible = false;
     }, 4000);

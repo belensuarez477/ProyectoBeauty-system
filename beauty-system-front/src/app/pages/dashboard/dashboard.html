@@ -1,1 +1,42 @@
-<p>dashboard works!</p>
+
+
+<main class="dashboard">
+
+   <section class="fecha">
+    <span class="dia">{{ fechaActual | date:'fullDate' }}</span>
+    <span class="hora">{{ fechaActual | date:'HH:mm:ss' }}</span>
+  </section>
+
+  <app-quick-action
+    (nuevoTurno)="abrirCalendario()"
+    (nuevoServicio)="nuevoServicio()">
+  </app-quick-action>
+
+  <section class="bloque">
+    <h2>Turnos de hoy</h2>
+    <ul>
+      <li *ngFor="let turno of turnosHoy">
+        <strong>{{ turno.hora }}</strong> – {{ turno.cliente }}
+        <button class="editar">Editar</button>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bloque">
+    <h2>Servicios del día</h2>
+    <ul>
+      <li *ngFor="let servicio of serviciosHoy">
+        {{ servicio.nombre }}
+        <span class="badge">{{ servicio.disponibles }} disponibles</span>
+      </li>
+    </ul>
+  </section>
+<section class="calendario-container" *ngIf="mostrarModal">
+  <app-modales
+    (confirmarFecha)="irAGestionTurno($event)"
+    (cerrarModal)="cerrarCalendario()">
+  </app-modales>
+</section>
+
+
+</main>

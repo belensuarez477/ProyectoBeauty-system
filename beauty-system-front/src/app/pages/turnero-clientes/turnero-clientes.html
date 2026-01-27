@@ -1,1 +1,58 @@
-<p>turnero-clientes works!</p>
+
+
+<div class="turnos-container">
+  <h1 class="titulo">Gestión de turnos</h1>
+
+  <!-- Día seleccionado -->
+  <h2 class="dia">
+    {{ fechaSeleccionada ? (fechaSeleccionada | date:'fullDate') : 'Sin fecha seleccionada' }}
+  </h2>
+
+  <!-- Acciones -->
+  <div class="acciones">
+    <button (click)="agregarTurno()" class="btn-agregar">➕ Agregar cliente</button>
+    <button (click)="editarTurno()" class="btn-editar">Editar información</button>
+  </div>
+
+  <!-- Tabla -->
+  <table class="tabla-turnos">
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Servicio</th>
+        <th>Precio</th>
+        <th>Promociones</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let turno of turnos">
+        <td><input [(ngModel)]="turno.hora" placeholder="HH:mm" /></td>
+        <td><input [(ngModel)]="turno.nombre" placeholder="Nombre" /></td>
+        <td><input [(ngModel)]="turno.apellido" placeholder="Apellido" /></td>
+        <td>
+          <select [(ngModel)]="turno.servicio">
+            <option *ngFor="let s of servicios" [value]="s">{{ s }}</option>
+          </select>
+        </td>
+        <td><input [(ngModel)]="turno.precio" placeholder="$0" /></td>
+        <td><input [(ngModel)]="turno.promocion" placeholder="Promoción" /></td>
+        <td>
+          <select [(ngModel)]="turno.estado">
+            <option *ngFor="let e of estados" [value]="e">{{ e }}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Botón Guardar -->
+  <button (click)="guardarTurno()" class="btn-guardar">💾 Guardar turno</button>
+
+  <!-- Aviso discreto -->
+  <div *ngIf="mensajeGuardado" class="popup">
+    {{ mensajeGuardado }}
+  </div>
+</div>

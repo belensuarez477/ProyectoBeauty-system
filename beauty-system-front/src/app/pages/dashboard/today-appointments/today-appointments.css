@@ -1,0 +1,51 @@
+.dashboard {
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.fecha {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.acciones button {
+  padding: 10px 16px;
+  border: none;
+  background: #7b2cbf;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bloque {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.bloque ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bloque li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.badge {
+  background: #ddd;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}

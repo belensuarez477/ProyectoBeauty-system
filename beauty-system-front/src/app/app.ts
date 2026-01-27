@@ -4,7 +4,7 @@ import { LayoutPublic } from "./core/layout-public/layout-public";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LayoutPublic],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

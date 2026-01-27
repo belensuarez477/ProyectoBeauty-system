@@ -11,7 +11,6 @@ import { ComoFunciona } from '../../features/como-funciona/como-funciona';
   standalone: true,
   imports: [
     Hero,
-    NavbarPublic,
     Beneficios,
     ComoFunciona,
   ],

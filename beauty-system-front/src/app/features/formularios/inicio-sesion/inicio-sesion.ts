@@ -14,6 +14,7 @@ import { AuthService } from '../../../core/services/auth.service';
 export class InicioSesion implements OnInit {
   usuario = '';
   password = '';
+
   toastVisible = false;
   toastMessage = '';
   toastTipo: 'exito' | 'error' = 'exito';
@@ -24,7 +25,6 @@ export class InicioSesion implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Fuerza campos vacíos al entrar al componente
     this.usuario = '';
     this.password = '';
   }
@@ -35,27 +35,24 @@ export class InicioSesion implements OnInit {
       return;
     }
 
-    // Validar credenciales
-    const resultado = this.authService.validarSesion(this.usuario, this.password);
+    const resultado = this.authService.validarSesion(
+      this.usuario,
+      this.password
+    );
 
     if (resultado.success) {
-      // Guardar sesión actual
       this.authService.guardarSesionActual(this.usuario);
-      this.mostrarToast('Inicio de sesión exitosa', 'exito');
+      this.mostrarToast('Inicio de sesión exitoso', 'exito');
 
-      // Redirigir al dashboard después de 2 segundos
       setTimeout(() => {
         this.router.navigate(['/dashboard'], { replaceUrl: true });
-      }, 2000);
+      }, 1500);
+
     } else {
       this.mostrarToast(resultado.mensaje, 'error');
     }
 
-    // Limpiar formulario
-    form.resetForm({
-      usuario: '',
-      password: ''
-    });
+    form.resetForm();
   }
 
   private mostrarToast(mensaje: string, tipo: 'exito' | 'error') {
@@ -63,7 +60,6 @@ export class InicioSesion implements OnInit {
     this.toastTipo = tipo;
     this.toastVisible = true;
 
-    // Ocultar el toast después de 4 segundos
     setTimeout(() => {
       this.toastVisible = false;
     }, 4000);

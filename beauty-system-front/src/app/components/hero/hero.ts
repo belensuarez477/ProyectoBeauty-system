@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [NgOptimizedImage],
+  imports: [],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

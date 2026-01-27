@@ -1,1 +1,36 @@
-<p>navbar-private works!</p>
+<nav class="navbar">
+
+  <div class="navbar-left">
+    <span class="logo">BeautySystem</span>
+  </div>
+
+  <div class="navbar-center">
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Inicio
+    </a>
+
+    <a
+      routerLink="/dashboard/turnos"
+      routerLinkActive="active"
+    >
+      Turnos
+    </a>
+
+   <a routerLink="turnero-servicios">Servicios</a>
+  </div>
+
+  <div class="navbar-right">
+    <div class="user-menu">
+      <button class="user-icon" (click)="toggleMenu()">👤</button>
+
+      <div class="dropdown" *ngIf="menuAbierto">
+        <button (click)="cerrarSesion()">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+
+</nav>

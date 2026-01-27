@@ -1,1 +1,15 @@
-<p>today-appointments works!</p>
+<section class="today-appointments">
+  <h3>Turnos de hoy</h3>
+
+  <div *ngFor="let a of appointments" class="appointment-card">
+    <div class="appointment-info">
+      <strong>{{ a.time }}</strong> – {{ a.client }} – {{ a.service }}
+    </div>
+    <span class="status" 
+          [class.confirmed]="a.status === 'Confirmado'" 
+          [class.pending]="a.status === 'Pendiente'" 
+          [class.cancelled]="a.status === 'Cancelado'">
+      {{ a.status }}
+    </span>
+  </div>
+</section>

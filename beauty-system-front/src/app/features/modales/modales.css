@@ -1,0 +1,90 @@
+.calendar {
+  background: #f8f9f7;
+  padding: 20px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  font-family: system-ui, sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #2f3e2f;
+}
+
+.nav-btn {
+  background: #e6ede8;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7c6b;
+  font-weight: 600;
+}
+
+.day {
+  background: white;
+  border: 1px solid #dde5dd;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.day:hover {
+  background: #e6f0e8;
+}
+
+.day.selected {
+  background: #377741;
+  color: white;
+  font-weight: bold;
+}
+
+.calendar-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-cerrar {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-confirmar {
+  background: #377741;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-confirmar:disabled {
+  background: #a8c1ad;
+  cursor: not-allowed;
+}
+.btn-cerrar:hover {
+  background: #f0f0f0;
+}

@@ -39,3 +39,15 @@
   margin: 0 auto var(--space-lg);
   font-size: var(--fs-text);
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: antiquewhite;
+}
+.tabla-turnos tr:hover td {
+  background: var(--bg-soft);
+  cursor: pointer;
+}

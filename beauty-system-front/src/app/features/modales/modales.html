@@ -1,1 +1,35 @@
-<p>modales works!</p>
+<div class="calendar">
+
+  <div class="calendar-header">
+    <button class="nav-btn" (click)="previousMonth()">‹</button>
+    <span>{{ months[currentMonth] }} {{ currentYear }}</span>
+    <button class="nav-btn" (click)="nextMonth()">›</button>
+  </div>
+
+  <div class="calendar-grid">
+    <div class="weekday" *ngFor="let d of ['L','M','M','J','V','S', 'D']">
+      {{ d }}
+    </div>
+
+    <div *ngFor="let _ of [].constructor(firstDayOfMonth)"></div>
+
+    <button
+      class="day"
+      *ngFor="let day of daysInMonth"
+      [class.selected]="isSelected(day)"
+      (click)="selectDate(day)">
+      {{ day }}
+    </button>
+  </div>
+
+  <div class="calendar-actions">
+    <button class="btn-cerrar" (click)="cerrar()">Cerrar</button>
+    <button
+      class="btn-confirmar"
+      [disabled]="!fechaSeleccionada"
+      (click)="confirmar()">
+      Confirmar fecha
+    </button>
+  </div>
+
+</div>
